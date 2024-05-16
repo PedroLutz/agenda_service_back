@@ -3,6 +3,7 @@ package com.agenda_service_back.usuarios;
 import com.agenda_service_back.endereco.EnderecoEntity;
 import com.agenda_service_back.telefone.TelefoneEntity;
 import com.agenda_service_back.agendamentos.AgendamentoEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,11 +34,13 @@ public class UsuarioEntity implements Serializable {
     private LocalDate usuario_data_nascimento;
     @Column(name = "usuario_senha")
     private String usuario_senha;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "usuario_endereco_id", nullable = false)
     private EnderecoEntity usuario_endereco_id;
+    @JsonIgnore
     @OneToMany(mappedBy = "telefone_usuario_id", fetch = FetchType.EAGER)
     private List<TelefoneEntity> telefones;
+    @JsonIgnore
     @OneToMany(mappedBy = "agendamento_usuario_id", fetch = FetchType.EAGER)
     private List<AgendamentoEntity> agendamentos;
 

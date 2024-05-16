@@ -34,11 +34,11 @@ public class ServicoEntity implements Serializable {
     @Column(name="servico_preco")
     private double servico_preco;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "servico_categoria_id", nullable = false)
     private CategoriaEntity servico_categoria_id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "servico_prestador_id", nullable = false)
     private PrestadorEntity servico_prestador_id;
 

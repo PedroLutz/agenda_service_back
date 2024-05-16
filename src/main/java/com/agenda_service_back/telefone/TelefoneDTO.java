@@ -20,8 +20,8 @@ public class TelefoneDTO implements Serializable {
     @NotNull(message = "O campo NUMERO é requerido")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "(XX) XXXX-XXXX")
     private String telefone_numero;
-    @NotNull(message = "O campo USUARIO é requerido")
+
     private UsuarioEntity telefone_usuario_id;
-    @NotNull(message = "O campo PRESTADOR é requerido")
+
     private PrestadorEntity telefone_prestador_id;
 }

@@ -27,7 +27,6 @@ public class AgendamentoEntity implements Serializable {
 
     @Column(name = "agendamento_data")
     @Temporal(TemporalType.DATE)
-    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd/MM/yyyy")
     private LocalDate agendamento_data;
 
     @Column(name = "agendamento_hora")
@@ -42,11 +41,11 @@ public class AgendamentoEntity implements Serializable {
     @Enumerated(EnumType.STRING)
     private AgendamentoStatusEnum agendamento_status;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "agendamento_usuario_id",nullable = false)
     private UsuarioEntity agendamento_usuario_id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "agendamento_servico_id",nullable = false)
     private ServicoEntity agendamento_servico_id;
 

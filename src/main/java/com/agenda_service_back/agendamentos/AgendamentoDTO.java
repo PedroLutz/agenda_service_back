@@ -22,7 +22,7 @@ public class AgendamentoDTO implements Serializable {
 
     @NotNull(message = "O campo DATA é requerido.")
     @Temporal(TemporalType.DATE)
-    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd/MM/yyyy")
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd")
     private LocalDate agendamento_data;
 
     @NotNull(message = "O campo HORA é requerido.")

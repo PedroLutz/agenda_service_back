@@ -1,6 +1,7 @@
 package com.agenda_service_back.categoria;
 
 import com.agenda_service_back.servico.ServicoEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,6 +27,7 @@ public class CategoriaEntity implements Serializable {
     private String categoria_nome;
     @Column(name = "categoria_descricao")
     private String categoria_descricao;
+    @JsonIgnore
     @OneToMany(mappedBy = "servico_categoria_id", fetch = FetchType.EAGER)
     private List<ServicoEntity> servicos;
 

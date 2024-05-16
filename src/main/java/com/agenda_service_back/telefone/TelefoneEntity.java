@@ -27,11 +27,11 @@ public class TelefoneEntity implements Serializable {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "(XX) XXXX-XXXX")
     private String telefone_numero;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "telefone_usuario_id")
     private UsuarioEntity telefone_usuario_id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "telefone_prestador_id")
     private PrestadorEntity telefone_prestador_id;
 
