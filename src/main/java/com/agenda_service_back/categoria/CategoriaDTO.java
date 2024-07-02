@@ -18,5 +18,5 @@ public class CategoriaDTO implements Serializable {
     @NotNull(message = "O campo NOME é requerido.")
     private String categoria_nome;
     @NotNull(message = "O campo DESCRICAO é requerido.")
-    private String categoria_descricao;
+    private String categoria_descricao; //
 }
